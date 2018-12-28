@@ -1,0 +1,59 @@
+.navButton {
+  display: none;
+  position: fixed;
+  width: 70px;
+  height: 70px;
+  top: 15px;
+  right: 15px;
+  background: rgba(0,0,0,0.4);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 250ms linear;
+  z-index: 21;
+  transform: scale(0.8);
+}
+.navButton.open {
+  transform: rotate(90deg) scale(0.8);
+}
+
+.line {
+  position: absolute;
+  height: 6px;
+  width: 50px;
+  border-radius: 3px;
+  background: var(--light1);
+  transition: transform 250ms linear, opacity 250ms linear;
+}
+
+.one {
+  transform: translate(10px, 14px);
+}
+.one.open {
+  transform: translate(10px, 30px) rotate(45deg);
+}
+
+.two {
+  transform: translate(10px, 30px);
+}
+.two.open {
+  opacity: 0;
+}
+
+.three {
+  transform: translate(10px, 47px);
+}
+.three.open {
+  transform: translate(10px, 30px) rotate(135deg);
+}
+/* ------------- */
+/* Media Queries */
+/* ------------- */
+@media (max-width: 1080px) {
+  
+}
+
+@media (max-width: 650px) {
+  .navButton {
+    display: block;
+  }
+}

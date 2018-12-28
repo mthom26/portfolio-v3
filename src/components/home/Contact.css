@@ -1,0 +1,181 @@
+.contact {
+  background: var(--dark2);
+  padding: 5rem 5rem 3rem 5rem;
+}
+
+.contact p {
+  margin-bottom: 2rem; 
+}
+
+.contact h2 {
+  border-bottom: 2px solid var(--orange);
+  display: inline-block;
+}
+
+.contactSpan {
+ border-bottom: 2px solid var(--orange);
+ display: inline-block;
+}
+
+.contactItem {
+  margin-bottom: 2rem;
+}
+
+.contactLink {
+  margin-right: 2rem;
+  opacity: 0.8;
+}
+
+.contactLink:hover {
+  opacity: 1;
+}
+
+.contactForm {
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contactFormInputBlock {
+  width: 100%;
+}
+
+.contactFormInputBlock input,
+.contactFormInputBlock textarea {
+  width: 100%;
+  margin-top: 1rem;
+  background: rgba(0,0,0,0.3);
+  border: none;
+  color: var(--light1);
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.contactFormInputBlock input:focus,
+.contactFormInputBlock textarea:focus {
+  outline: none;
+  background: rgba(0,0,0,0.4);
+  box-shadow: 0 0 5px var(--orange);
+}
+
+/* ------------------------------------------------------ */
+/* Custom Button - mostly a duplicate of Button Component */
+/* ------------------------------------------------------ */
+.buttonBaseC {
+  cursor: pointer;
+  position: relative;
+  margin: 1rem 0 2rem 0;
+  opacity: 0.9;
+}
+
+.buttonC {
+  padding: 0.5rem 0;
+  position: relative;
+  width: 12rem;
+  text-decoration: none;
+  background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.7));
+  display: flex;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  transition: opacity 250ms linear;
+}
+
+.buttonTextC {
+  position: relative;
+  color: var(--orange);
+  margin: 0;
+  flex-basis: 9rem;
+  transform: translateX(1.5rem);
+  transition: transform 250ms ease-in-out;
+}
+
+.buttonIconC {
+  position: relative;
+  flex-basis: 2rem;
+  padding: 0.25rem;
+  transform: translateX(3rem);
+  transition: transform 200ms ease-in-out;
+}
+
+.buttonIconC img {
+  animation: spin-loader infinite 0.75s linear;
+}
+
+.buttonBottomC {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--dark2);
+}
+
+.buttonBottomVarC {
+  position: absolute;
+  bottom: 0;
+  background: var(--orange);
+  width: 100%;
+  height: 3px;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 200ms ease-in-out;
+}
+
+.buttonBaseC:hover {
+  opacity: 1;
+}
+
+.buttonTextC.loading {
+  transform: translateX(0rem);
+}
+
+.buttonIconC.loading {
+  transform: translateX(0rem);
+}
+
+.buttonBottomVarC.loading {
+  transform: scaleX(1);
+}
+
+.buttonTextC.success {
+  color: var(--green);
+}
+.buttonTextC.failure {
+  color: var(--red);
+}
+
+.buttonBottomVarC.success {
+  background: var(--green);
+  transform: scaleX(1);
+}
+.buttonBottomVarC.failure {
+  background: var(--red);
+  transform: scaleX(1);
+}
+
+.buttonBaseC:hover .buttonBottomVarC {
+  transform: scaleX(1);
+}
+
+@keyframes spin-loader {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ------------- */
+/* Media Queries */
+/* ------------- */
+@media (max-width: 1350px) {
+
+}
+
+@media (max-width: 650px) {
+  .contact {
+    padding: 5rem 2rem 3rem 2rem;
+  }
+}

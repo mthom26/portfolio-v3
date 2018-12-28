@@ -1,0 +1,16 @@
+.portfolio {
+  padding: 5rem 5rem 0 5rem;
+}
+
+/* ------------- */
+/* Media Queries */
+/* ------------- */
+@media (max-width: 1450px) {
+
+}
+
+@media (max-width: 880px) {
+  .portfolio {
+    padding: 5rem 0 0 0;
+  }
+}

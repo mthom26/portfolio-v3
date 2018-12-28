@@ -1,0 +1,95 @@
+/* ------- */
+/* SideNav */
+/* ------- */
+.sideNav {
+  position: fixed;
+  height: 100vh;
+  width: var(--navWidthLarge);
+  /* border: 1px solid red; */
+  background: var(--dark0);
+  display: flex;
+  justify-content: flex-end;
+  z-index: 20;
+}
+
+.navLinks {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding: 3rem;
+  text-transform: uppercase;
+}
+
+.navLink {
+  width: 100%;
+  text-align: right;
+  margin: 1rem 0;
+  padding: 1rem 0;
+  /* border: 1px solid lawngreen; */
+  opacity: 0.7;
+}
+
+.navBarBack {
+  height: 3px;
+  background: var(--dark2);
+  margin-top: 0.6rem;
+}
+
+.navBarFront {
+  height: 3px;
+  background: var(--orange);
+  box-shadow: 0px 0px 15px 1px var(--orange);
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 250ms ease-out;
+}
+
+.active {
+  opacity: 1;
+}
+
+.activeBar {
+  transform: scaleX(1);
+}
+
+.navLink:hover {
+  opacity: 1;
+}
+
+.progress {
+  width: 3px;
+  background: var(--orange);
+  box-shadow: 0px 0px 15px 1px var(--orange);
+}
+/* ------------- */
+/* Media Queries */
+/* ------------- */
+@media (max-width: 1080px) {
+  .navLinks {
+    padding: 3rem 1.5rem;
+  }
+
+  .sideNav {
+    width: var(--navWidthSmall);
+  }
+}
+
+@media (max-width: 650px) {
+  .navLinks {
+    padding: 3rem;
+  }
+
+  .sideNav {
+    width: 100%;
+    transition: transform 450ms ease-out;
+  }
+
+  .sideNavHidden {
+    transform: translateX(-100%);
+  }
+
+  .progress {
+    display: none;
+  }
+}

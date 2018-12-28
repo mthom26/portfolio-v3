@@ -1,0 +1,69 @@
+.buttonBase {
+  position: relative;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+.button {
+  padding: 0.5rem 0;
+  position: relative;
+  width: 8rem;
+  text-decoration: none;
+  background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.7));
+  display: flex;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  transition: opacity 250ms linear;
+}
+
+.buttonText {
+  position: relative;
+  margin: 0;
+  flex-basis: 6rem;
+  transform: translateX(1rem);
+  transition: transform 250ms ease-in-out;
+}
+
+.buttonIcon {
+  position: relative;
+  flex-basis: 2rem;
+  padding: 0.25rem;
+  transform: translateX(2rem);
+  transition: transform 200ms ease-in-out;
+}
+
+.buttonBottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--dark2);
+}
+
+.buttonBottomVar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 200ms ease-in-out;
+}
+
+.buttonBase:hover {
+  opacity: 1;
+}
+
+.buttonBase:hover .buttonText {
+  transform: translateX(0rem);
+}
+
+.buttonBase:hover .buttonIcon {
+  transform: translateX(0rem);
+}
+
+.buttonBase:hover .buttonBottomVar {
+  transform: scaleX(1);
+}
+
