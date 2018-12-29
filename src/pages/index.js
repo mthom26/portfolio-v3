@@ -81,7 +81,7 @@ class Index extends Component {
     }, {
       root: this.rootRef.current,
       threshold: new Array(11).fill(0).map((v, i) => i * 0.1)
-    })
+    });
   }
 
   componentDidMount() {
@@ -111,7 +111,7 @@ class Index extends Component {
 
   render() {
     const { navOpen, progress, activeLink, sectionPositions } = this.state;
-
+    
     return (
       <div className="app">
         <SideNav
