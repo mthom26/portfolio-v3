@@ -96,6 +96,7 @@ class Index extends Component {
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll);
+    this.observer.disconnect();
   }
 
   handleScroll() {
