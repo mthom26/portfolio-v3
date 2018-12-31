@@ -7,10 +7,10 @@ import '../reboot.css';
 import '../index.css';
 
 import SideNav from '../components/SideNav';
-import BlogComponent from '../components/blog/BlogComponent';
+import BlogPostComponent from '../components/blogPost/BlogPostComponent';
 import NavButton from '../components/NavButton';
 
-class Blog extends Component {
+class BlogPost extends Component {
   constructor(props) {
     super(props);
 
@@ -127,19 +127,18 @@ class Blog extends Component {
           toggleNav={this.toggleNav}
         />
         <div ref={this.rootRef} className="main">
-          <BlogComponent reference={this.blogRef} data={data} />
+          <BlogPostComponent reference={this.blogRef} data={data} />
         </div>
       </div>
     );
   }
 }
 
-export default Blog;
+export default BlogPost;
 
 export const query = graphql`
-{
-  allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-    totalCount
+query BlogPostQuery ($slug: String, $nextSlug: String, $prevSlug: String) {
+  main: allMarkdownRemark(filter: {frontmatter: { slug: { eq: $slug }}}) {
     edges {
       node {
         frontmatter {
@@ -147,6 +146,33 @@ export const query = graphql`
           date
           slug
         }
+        html
+      }
+    }
+  }
+
+  next: allMarkdownRemark(filter: {frontmatter: { slug: { eq: $nextSlug }}}) {
+    edges {
+      node {
+        frontmatter {
+          title
+          date
+          slug
+        }
+        html
+      }
+    }
+  }
+
+  prev: allMarkdownRemark(filter: {frontmatter: { slug: { eq: $prevSlug }}}) {
+    edges {
+      node {
+        frontmatter {
+          title
+          date
+          slug
+        }
+        html
       }
     }
   }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'gatsby';
 
 import './Blog.css';
 
@@ -17,6 +18,7 @@ class BlogComponent extends Component {
           <div key={post.node.frontmatter.title}>
             <h2>{post.node.frontmatter.title}</h2>
             <span>{post.node.frontmatter.date}</span>
+            <Link to={`/blog/${post.node.frontmatter.slug}`}>Read More...</Link>
           </div>
         ))}
       </div>
