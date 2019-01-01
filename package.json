@@ -13,7 +13,9 @@
   },
   "dependencies": {
     "dotenv": "^6.2.0",
-    "gatsby": "^2.0.76",
+    "gatsby": "^2.0.79",
+    "gatsby-plugin-sharp": "^2.0.17",
+    "gatsby-remark-images": "^3.0.1",
     "gatsby-source-filesystem": "^2.0.12",
     "gatsby-transformer-remark": "^2.1.17",
     "intersection-observer": "^0.5.1",
