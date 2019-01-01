@@ -149,6 +149,7 @@ export const query = graphql`
           date
           slug
         }
+        excerpt
       }
     }
   }

@@ -2,3 +2,50 @@
   /* border: 1px solid red; */
   padding: 0 5rem;
 }
+
+.blogPostItem {
+  border: 1px solid red;
+  margin-bottom: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  max-width: 800px;
+}
+
+.blogPostContent {
+  border: 1px solid yellow;
+  max-width: 600px;
+}
+
+.blogPostFrontmatter {
+  border: 1px solid cyan;
+  margin-bottom: 1rem;
+}
+
+.blogPostFrontmatter h2 {
+  display: inline;
+  transition: color 300ms ease-in;
+  margin-right: 1.5rem;
+}
+
+.blogPostFrontmatter span {
+  opacity: 0.6;
+}
+
+.blogPostIcon {
+  border: 1px solid lawngreen;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translateX(3rem);
+  transition: transform 300ms ease-in, opacity 300ms ease-in;
+}
+
+.blogPostItem:hover .blogPostIcon {
+  opacity: 1;
+  transform: translateX(0rem);
+}
+
+.blogPostItem:hover h2 {
+  color: var(--orange);
+}

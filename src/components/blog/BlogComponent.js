@@ -3,6 +3,8 @@ import { Link } from 'gatsby';
 
 import './Blog.css';
 
+import chevronLogo from '../../images/chevron-right.svg';
+
 class BlogComponent extends Component {
   constructor(props) {
     super(props);
@@ -14,11 +16,22 @@ class BlogComponent extends Component {
     return (
       <div ref={reference} id="blog" className="blog">
         {data.allMarkdownRemark.edges.map(post => (
-          <div key={post.node.frontmatter.title}>
-            <h2>{post.node.frontmatter.title}</h2>
-            <span>{post.node.frontmatter.date}</span>
-            <Link to={`/blog/${post.node.frontmatter.slug}`}>Read More...</Link>
-          </div>
+          <Link
+            key={post.node.frontmatter.title}
+            to={`/blog/${post.node.frontmatter.slug}`}
+            className="blogPostItem"
+          >
+            <div className="blogPostContent">
+              <div className="blogPostFrontmatter">
+                <h2>{post.node.frontmatter.title}</h2>
+                <span>{post.node.frontmatter.date}</span>
+              </div>
+              <p>{post.node.excerpt}</p>
+            </div>
+            <div className="blogPostIcon">
+              <img src={chevronLogo} height="48px" />
+            </div>
+          </Link>
         ))}
       </div>
     )
