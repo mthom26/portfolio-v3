@@ -13,12 +13,14 @@
   },
   "dependencies": {
     "dotenv": "^6.2.0",
-    "gatsby": "^2.0.79",
+    "gatsby": "^2.0.81",
     "gatsby-plugin-sharp": "^2.0.17",
     "gatsby-remark-images": "^3.0.1",
+    "gatsby-remark-prismjs": "^3.2.0",
     "gatsby-source-filesystem": "^2.0.12",
     "gatsby-transformer-remark": "^2.1.17",
     "intersection-observer": "^0.5.1",
+    "prismjs": "^1.15.0",
     "react": "^16.5.1",
     "react-dom": "^16.5.1"
   },
