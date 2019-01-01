@@ -1,0 +1,33 @@
+.blogHeader {
+  height: 40vh;
+  background: url(../../images/blogHeader.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
+
+.blogHeaderContent {
+  margin: 0 4rem;
+  padding: 0 1rem;
+  transition: transform 300ms ease-out, opacity 400ms linear;
+}
+
+.blogHeaderh1 {
+  margin-bottom: 1.8rem;
+  line-height: 1.2;
+}
+
+/* ------------- */
+/* Media Queries */
+/* ------------- */
+@media (max-width: 1080px) {
+  
+}
+
+@media (max-width: 650px) {
+  .blogHeaderContent {
+    margin: 0 auto;
+    text-align: center;
+  }
+}

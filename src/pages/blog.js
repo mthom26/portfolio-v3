@@ -9,6 +9,7 @@ import '../index.css';
 import SideNav from '../components/SideNav';
 import BlogComponent from '../components/blog/BlogComponent';
 import NavButton from '../components/NavButton';
+import BlogHeader from '../components/blog/BlogHeader';
 
 class Blog extends Component {
   constructor(props) {
@@ -127,6 +128,7 @@ class Blog extends Component {
           toggleNav={this.toggleNav}
         />
         <div ref={this.rootRef} className="main">
+          <BlogHeader />
           <BlogComponent reference={this.blogRef} data={data} />
         </div>
       </div>
