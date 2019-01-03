@@ -1,0 +1,38 @@
+.blogPostContainer {
+  display: flex;
+  justify-content: center;
+  padding: 0 1.5rem;
+}
+
+.blogPost {
+  max-width: 800px;
+}
+
+.blogPostTitle {
+  border: 1px solid red;
+  margin: 2.5rem 0;
+}
+
+.blogPostTitle span {
+  opacity: 0.6;
+}
+
+/* This targets the gatsby generated code to make code blocks responsive */
+.gatsby-highlight code {
+  white-space: pre-wrap;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+/* ------------- */
+/* Media Queries */
+/* ------------- */
+@media (max-width: 1080px) {
+  
+}
+
+@media (max-width: 650px) {
+  .blogPostTitle {
+    text-align: center;
+  }
+}

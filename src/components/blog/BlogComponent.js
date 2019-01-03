@@ -21,14 +21,14 @@ class BlogComponent extends Component {
             to={`/blog/${post.node.frontmatter.slug}`}
             className="blogPostItem"
           >
-            <div className="blogPostContent">
-              <div className="blogPostFrontmatter">
+            <div className="blogPostItemContent">
+              <div className="blogPostItemFrontmatter">
                 <h2>{post.node.frontmatter.title}</h2>
                 <span>{post.node.frontmatter.date}</span>
               </div>
               <p>{post.node.excerpt}</p>
             </div>
-            <div className="blogPostIcon">
+            <div className="blogPostItemIcon">
               <img src={chevronLogo} height="48px" />
             </div>
           </Link>

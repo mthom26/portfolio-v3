@@ -11,12 +11,12 @@
   max-width: 800px;
 }
 
-.blogPostContent {
+.blogPostItemContent {
   border: 1px solid yellow;
   max-width: 600px;
 }
 
-.blogPostFrontmatter {
+.blogPostItemFrontmatter {
   border: 1px solid cyan;
   margin-bottom: 1rem;
 }
@@ -31,7 +31,7 @@
   opacity: 0.6;
 }
 
-.blogPostIcon {
+.blogPostItemIcon {
   border: 1px solid lawngreen;
   display: flex;
   justify-content: center;
@@ -41,7 +41,7 @@
   transition: transform 300ms ease-in, opacity 300ms ease-in;
 }
 
-.blogPostItem:hover .blogPostIcon {
+.blogPostItem:hover .blogPostItemIcon {
   opacity: 1;
   transform: translateX(0rem);
 }

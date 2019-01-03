@@ -56,6 +56,10 @@ h2 {
 }
 
 @media (max-width: 650px) {
+  h1 {
+    font-size: 2.4rem;
+  }
+
   .main {
     margin-left: 0;
   }
