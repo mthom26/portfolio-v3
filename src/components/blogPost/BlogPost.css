@@ -9,7 +9,6 @@
 }
 
 .blogPostTitle {
-  border: 1px solid red;
   margin: 2.5rem 0;
 }
 
@@ -18,7 +17,6 @@
 }
 
 .blogPostFooter {
-  /* border: 1px solid cyan; */
   margin-top: 2.5rem;
   display: flex;
   justify-content: space-between;
@@ -31,44 +29,47 @@
 .blogPostPrev, .blogPostNext {
   flex-basis: 45%;
   padding: 1.5rem 0;
-  /* border: 1px solid yellow; */
   overflow: hidden;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
   opacity: 0.7;
   transition: opacity 300ms ease-in-out;
+  border-bottom: 3px solid var(--dark2);
+}
+
+.blogPostPrev {
+  text-align: right;
+}
+
+.blogPostPrevContent {
+  margin-left: 1.5rem;
+}
+.blogPostNextContent {
+  margin-right: 1.5rem;
+}
+
+.blogPostPrevIcon, .blogPostNextIcon {
+  height: 64px;
+  width: 64px;
+  transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+  opacity: 0;
+}
+
+.blogPostPrevIcon {
+  transform: translateX(-30%);
+}
+.blogPostNextIcon {
+  transform: translateX(30%);
 }
 
 .blogPostPrev:hover, .blogPostNext:hover {
   opacity: 1;
 }
 
-.blogPostPrev .bottomBar {
-  transform: translateX(100%);
-  transition: transform 300ms ease-in-out;
-}
-.blogPostPrev:hover .bottomBar {
+.blogPostPrev:hover .blogPostPrevIcon, .blogPostNext:hover .blogPostNextIcon {
+  opacity: 1;
   transform: translateX(0%);
-}
-
-.blogPostNext .bottomBar {
-  transform: translateX(-100%);
-  transition: transform 300ms ease-in-out;
-}
-.blogPostNext:hover .bottomBar {
-  transform: translateX(0%);
-}
-
-.bottomBar {
-  height: 3px;
-  width: 50%;
-  background: var(--orange);
-  margin-top: 1rem;
-}
-
-.blogPostPrev {
-  align-items: flex-end;
 }
 
 /* This targets the gatsby generated code to make code blocks responsive */
@@ -86,6 +87,22 @@
 }
 
 @media (max-width: 650px) {
+  .blogPostContainer {
+    padding: 3rem 1.5rem 2.5rem 1.5rem;
+  }
+
+  .blogPostFooter {
+    flex-direction: column;
+  }
+
+  .blogPostPrev {
+    margin-bottom: 1.5rem;
+  }
+  .blogPostPrevIcon, .blogPostNextIcon {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
   .blogPostTitle {
     text-align: center;
   }

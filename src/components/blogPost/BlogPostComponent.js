@@ -3,6 +3,8 @@ import { Link } from 'gatsby';
 
 import './BlogPost.css';
 
+import { chevronLeft, chevronRight } from '../../utils/icons'; 
+
 class BlogPostComponent extends Component {
   constructor(props) {
     super(props);
@@ -35,14 +37,23 @@ class BlogPostComponent extends Component {
           <div dangerouslySetInnerHTML={{ __html: html }} />
           <div className="blogPostFooter">
             <Link to={`/blog/${prevSlug}`} className="blogPostPrev">
-              <h3>{prevTitle}</h3>
-              <span>{prevDate}</span>
-              <div className="bottomBar" />
+              <div className="blogPostPrevIcon">
+                {chevronLeft('#e29865')}
+              </div>
+              <div className="blogPostPrevContent">
+                <h3>{prevTitle}</h3>
+                <span>{prevDate}</span>
+              </div>
+              
             </Link>
             <Link to={`/blog/${nextSlug}`} className="blogPostNext">
-              <h3>{nextTitle}</h3>
-              <span>{nextDate}</span>
-              <div className="bottomBar" />
+              <div className="blogPostNextContent">
+                <h3>{nextTitle}</h3>
+                <span>{nextDate}</span>
+              </div>
+              <div className="blogPostNextIcon">
+                {chevronRight('#e29865')}
+              </div>
             </Link>
           </div>
         </div>
