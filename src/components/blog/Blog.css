@@ -59,3 +59,29 @@
 .blogPostItem:hover h2 {
   color: var(--orange);
 }
+
+/* ------------- */
+/* Media Queries */
+/* ------------- */
+@media (max-width: 1080px) {
+  
+}
+
+@media (max-width: 650px) {
+  .blog {
+    padding: 0 1.5rem;
+  }
+
+  .blogPostItemFrontmatter h2 {
+    display: block;
+    margin-right: 0;
+  }
+
+  .blogPostItemIcon {
+    display: none;
+  }
+
+  .blogPostItem {
+    text-align: center;
+  }
+}

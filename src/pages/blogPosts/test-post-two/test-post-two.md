@@ -1,5 +1,5 @@
 ---
-title: "Second Post"
+title: "Second Post With A Longer Title"
 date: "2018-12-29"
 slug: "second-post"
 ---
