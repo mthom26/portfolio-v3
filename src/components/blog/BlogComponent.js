@@ -3,7 +3,8 @@ import { Link } from 'gatsby';
 
 import './Blog.css';
 
-import chevronLogo from '../../images/chevron-right.svg';
+// import chevronLogo from '../../images/chevron-right.svg';
+import { chevronRight } from '../../utils/icons';
 
 class BlogComponent extends Component {
   constructor(props) {
@@ -29,7 +30,8 @@ class BlogComponent extends Component {
               <p>{post.node.excerpt}</p>
             </div>
             <div className="blogPostItemIcon">
-              <img src={chevronLogo} height="48px" />
+              {/* <img src={chevronLogo} height="48px" /> */}
+              {chevronRight('#e29865')}
             </div>
           </Link>
         ))}

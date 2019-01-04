@@ -12,4 +12,20 @@ const linkIcon = (customColor) => {
   )
 };
 
-export { gitHubIcon, linkIcon };
+const chevronRight = (customColor) => {
+  return (
+    <svg width="100%" height="100%" viewBox="0 0 20 20" style={{fillRule:'evenodd',clipRule:'evenodd',strokeLinejoin:'round',strokeMiterlimit:1.41421}}><path d="M13.71,9.29l-6-6C7.53,3.11,7.28,3,7,3C6.45,3,6,3.45,6,4
+    c0,0.28,0.11,0.53,0.29,0.71L11.59,10l-5.29,5.29C6.11,15.47,6,15.72,6,16c0,0.55,0.45,1,1,1c0.28,0,0.53-0.11,0.71-0.29l6-6
+    C13.89,10.53,14,10.28,14,10C14,9.72,13.89,9.47,13.71,9.29z" style={{fill:customColor,fillRule:'nonzero'}}/></svg>
+  )
+};
+
+const chevronLeft = (customColor) => {
+  return (
+    <svg width="100%" height="100%" viewBox="0 0 20 20" style={{fillRule:'evenodd',clipRule:'evenodd',strokeLinejoin:'round',strokeMiterlimit:1.41421}}><path d="M8.41,10l5.29-5.29C13.89,4.53,14,4.28,14,4c0-0.55-0.45-1-1-1
+    c-0.28,0-0.53,0.11-0.71,0.29l-6,6C6.11,9.47,6,9.72,6,10c0,0.28,0.11,0.53,0.29,0.71l6,6C12.47,16.89,12.72,17,13,17
+    c0.55,0,1-0.45,1-1c0-0.28-0.11-0.53-0.29-0.71L8.41,10z" style={{fill:customColor,fillRule:'nonzero'}}/></svg>
+  )
+};
+
+export { gitHubIcon, linkIcon, chevronRight, chevronLeft };
