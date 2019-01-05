@@ -8,6 +8,10 @@
   max-width: 800px;
 }
 
+.blogPostContent a {
+  color: var(--orange);
+}
+
 .blogPostTitle {
   margin: 2.5rem 0;
 }
@@ -78,6 +82,16 @@
   word-break: break-all;
   word-wrap: break-word;
   font-size: 0.9rem;
+}
+
+.gatsby-highlight-code-line {
+  background-color: #434343;
+  display: block;
+  margin-right: -1em;
+  margin-left: -1em;
+  padding-right: 1em;
+  padding-left: 0.75em;
+  border-left: 0.25em solid var(--orange);
 }
 
 /* ------------- */

@@ -34,7 +34,7 @@ class BlogPostComponent extends Component {
             <h1>{title}</h1>
             <span>{date}</span>
           </div>
-          <div dangerouslySetInnerHTML={{ __html: html }} />
+          <div className="blogPostContent" dangerouslySetInnerHTML={{ __html: html }} />
           <div className="blogPostFooter">
             <Link to={`/blog/${prevSlug}`} className="blogPostPrev">
               <div className="blogPostPrevIcon">

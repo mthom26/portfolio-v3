@@ -34,7 +34,8 @@ Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculu
 ```javascript
 const arr = [0, 3, 5, 4, 1, 2, 7, 9];
 
-const filtered = arr.filter(item => (
+const newVar = 'Hello'; // highlight-line
+const filtered = arr.filter(item => ( // highlight-line
   item < 4
 ));
 
