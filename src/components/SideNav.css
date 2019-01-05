@@ -18,7 +18,9 @@
   justify-content: center;
   width: 100%;
   padding: 3rem;
-  text-transform: uppercase;
+  text-transform: capitalize;
+  font-size: 1.2rem;
+  letter-spacing: 0.08rem; 
 }
 
 .navLink {
@@ -78,6 +80,10 @@
 @media (max-width: 650px) {
   .navLinks {
     padding: 3rem;
+  }
+
+  .navLink {
+    margin: 0.5rem 0; 
   }
 
   .sideNav {
