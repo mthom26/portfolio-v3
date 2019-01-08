@@ -12,6 +12,15 @@
   color: var(--orange);
 }
 
+.blogPostContent a:hover {
+  text-decoration: underline;
+}
+
+.blogPostContent h2 {
+  border-bottom: 2px solid var(--orange);
+  display: inline-block;
+}
+
 .blogPostTitle {
   margin: 2.5rem 0;
 }
@@ -76,16 +85,17 @@
   transform: translateX(0%);
 }
 
-/* This targets the gatsby generated code to make code blocks responsive */
-.gatsby-highlight code {
-  white-space: pre-wrap;
-  word-break: break-all;
-  word-wrap: break-word;
-  font-size: 0.9rem;
+.blogPostRuler {
+  margin-top: 4rem;
+  height: 3px;
+  background: var(--dark2);
+  border: none;
+  width: 80%;
 }
 
+/* Code block highlighting */
 .gatsby-highlight-code-line {
-  background-color: #434343;
+  background-color: #3a3a3a;
   display: block;
   margin-right: -1em;
   margin-left: -1em;
