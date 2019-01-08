@@ -1,8 +1,12 @@
 require("dotenv").config();
 
 module.exports = {
+  siteMetadata: {
+    siteUrl: 'https://www.michaelthompson.me'
+  },
   plugins: [
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-transformer-remark',
       options: {
