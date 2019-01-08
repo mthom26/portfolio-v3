@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { graphql } from 'gatsby';
-import 'intersection-observer';
+// import 'intersection-observer';
 import { Helmet } from 'react-helmet';
 
 import '../reboot.css';
@@ -42,7 +42,9 @@ class BlogPost extends Component {
     // this.aboutRef = React.createRef();
     // this.portfolioRef = React.createRef();
     // this.contactRef = React.createRef();
+  }
 
+  componentDidMount() {
     this.observer = new IntersectionObserver(items => {
       /*-----------------------------------------------------------------------
         intersectionAmount is updated when the user scrolls and determines 
@@ -80,11 +82,7 @@ class BlogPost extends Component {
       root: this.rootRef.current,
       threshold: new Array(11).fill(0).map((v, i) => i * 0.1)
     });
-  }
-
-  componentDidMount() {
-    // ReactGA.initialize('UA-107308251-4');
-    // ReactGA.pageview('/');
+    
     window.addEventListener('scroll', this.handleScroll, { passive: true });
     this.observer.observe(this.blogRef.current);
     // this.observer.observe(this.homeRef.current);

@@ -7,7 +7,9 @@ class Landing extends React.Component {
     super(props);
 
     this.fadeRef = React.createRef();
+  }
 
+  componentDidMount() {
     this.observer = new IntersectionObserver(items => {
       items.forEach(item => {
         item.target.classList.remove('fadeLeft');
@@ -17,9 +19,7 @@ class Landing extends React.Component {
     }, {
       threshold: 0.8
     });
-  }
-
-  componentDidMount() {
+    
     this.observer.observe(this.fadeRef.current);
   }
 

@@ -14,7 +14,9 @@ class Portfolio extends React.Component {
     this.fadeRightRefOne = React.createRef();
     this.fadeRefTwo = React.createRef();
     this.fadeRightRefTwo = React.createRef();
+  }
 
+  componentDidMount() {
     this.observer = new IntersectionObserver(items => {
       items.forEach(item => {
         if(item.intersectionRatio > 0.49) {
@@ -27,9 +29,7 @@ class Portfolio extends React.Component {
     }, {
       threshold: 0.5
     });
-  }
 
-  componentDidMount() {
     this.observer.observe(this.fadeRefOne.current);
     this.observer.observe(this.fadeRightRefOne.current);
     this.observer.observe(this.fadeRefTwo.current);
