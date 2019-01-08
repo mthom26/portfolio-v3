@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { graphql } from 'gatsby';
 import 'intersection-observer';
-// import ReactGA from 'react-ga';
+import { Helmet } from 'react-helmet';
 
 import '../reboot.css';
 import '../index.css';
@@ -112,9 +112,17 @@ class BlogPost extends Component {
   render() {
     const { navOpen, progress, activeLink, sectionPositions } = this.state;
     const { data } = this.props;
+    const {
+      excerpt,
+      frontmatter: { title }
+    } = this.props.data.main.edges[0].node;
 
     return (
       <div className="app">
+      <Helmet>
+          <title>{title} | Michael Thompson</title>
+          <meta name="description" content={excerpt} />
+        </Helmet>
         <SideNav
           navOpen={navOpen}
           progress={progress}
@@ -146,6 +154,7 @@ query BlogPostQuery ($slug: String, $nextSlug: String, $prevSlug: String) {
           date
           slug
         }
+        excerpt
         html
       }
     }

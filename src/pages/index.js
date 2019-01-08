@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import 'intersection-observer';
-// import ReactGA from 'react-ga';
+import { Helmet } from 'react-helmet';
 
 import '../reboot.css';
 import '../index.css';
@@ -115,6 +115,10 @@ class Index extends Component {
     
     return (
       <div className="app">
+        <Helmet>
+          <title>Michael Thompson | Bespoke Web Development</title>
+          <meta name="description" content="Hello! I am a self taught web developer based in Enniskillen, United Kingdom. I can design and create the right webite for your business or brand." />
+        </Helmet>
         <SideNav
           navOpen={navOpen}
           progress={progress}

@@ -2,6 +2,7 @@ require("dotenv").config();
 
 module.exports = {
   plugins: [
+    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-transformer-remark',
       options: {

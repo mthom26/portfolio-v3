@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { graphql } from 'gatsby';
 import 'intersection-observer';
-// import ReactGA from 'react-ga';
+import { Helmet } from 'react-helmet';
 
 import '../reboot.css';
 import '../index.css';
@@ -116,6 +116,10 @@ class Blog extends Component {
 
     return (
       <div className="app">
+        <Helmet>
+          <title>Blog | Michael Thompson</title>
+          <meta name="description" content="Hello! I am a self taught web developer based in Enniskillen, United Kingdom. I can design and create the right webite for your business or brand." />
+        </Helmet>
         <SideNav
           navOpen={navOpen}
           progress={progress}
