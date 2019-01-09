@@ -4,7 +4,7 @@ date: "2019-01-09"
 slug: "react-animated-card-modal-part-1"
 ---
 
-There are plenty of versatile animation libraries for React these days that allow you to implement all sorts of cool animations but sometimes it can be fun to build what you want from scratch. With that in mind we're going to create an animated card modal in React without using any libraries. For a quick peek at the finished project have a look at the [live demo](https://www.google.com) and the [Github repository](https://www.github.com). 
+There are plenty of versatile animation libraries for React these days that allow you to implement all sorts of cool animations but sometimes it can be fun to build what you want from scratch. With that in mind we're going to create an animated card modal in React without using any libraries. For a quick peek at the finished project have a look at the [live demo](https://react-animated-card-modal.netlify.com/) and the [Github repository](https://github.com/mthom26/animated-card-modal). 
 
 ## Setting up the Project
 
