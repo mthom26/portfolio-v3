@@ -1,6 +1,6 @@
 .blogHeader {
   height: 40vh;
-  background: url(../../images/blogHeader.jpg);
+  background: url(../../images/blog_bg.jpg);
   background-size: cover;
   background-position: center;
   display: flex;
