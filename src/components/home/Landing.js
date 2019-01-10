@@ -32,7 +32,7 @@ class Landing extends React.Component {
           <h1 className="landingh1">
             Michael <span className="landingColored">Thompson</span>
           </h1>
-          <h2>Web Developer, Programmer and Designer</h2>
+          <h2>Bespoke Web Development</h2>
         </div>
       </div>
     )

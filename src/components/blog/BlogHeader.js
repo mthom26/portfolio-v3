@@ -28,8 +28,7 @@ class BlogHeader extends React.Component {
       <div className="blogHeader">
         <div ref={this.fadeRef} className="blogHeaderContent fadeLeft">
             <h1 className="blogHeaderh1">Blog</h1>
-             {/* <hr /> */}
-            <h2>My Blog</h2>
+            <h2>A few tutorials and thoughts</h2>
           </div>
       </div>
     )
