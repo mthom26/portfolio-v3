@@ -37,13 +37,7 @@ class Blog extends Component {
     this.handleScroll = this.handleScroll.bind(this);
 
     // Create refs for each section
-    this.rootRef = React.createRef();
     this.blogRef = React.createRef();
-    // this.homeRef = React.createRef();
-    // this.aboutRef = React.createRef();
-    // this.portfolioRef = React.createRef();
-    // this.contactRef = React.createRef();
-
   }
 
   componentDidMount() {
@@ -81,7 +75,6 @@ class Blog extends Component {
         getSectionPositions: false
       });
     }, {
-      root: this.rootRef.current,
       threshold: new Array(11).fill(0).map((v, i) => i * 0.1)
     });
 
@@ -130,7 +123,7 @@ class Blog extends Component {
           navOpen={navOpen}
           toggleNav={this.toggleNav}
         />
-        <div ref={this.rootRef} className="main">
+        <div className="main">
           <BlogHeader />
           <BlogComponent reference={this.blogRef} data={data} />
         </div>

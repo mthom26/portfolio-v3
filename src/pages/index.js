@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import 'intersection-observer';
 import { Helmet } from 'react-helmet';
 
 import '../reboot.css';
@@ -39,13 +38,10 @@ class Index extends Component {
     this.handleScroll = this.handleScroll.bind(this);
 
     // Create refs for each section
-    this.rootRef = React.createRef();
     this.homeRef = React.createRef();
     this.aboutRef = React.createRef();
     this.portfolioRef = React.createRef();
-    this.contactRef = React.createRef();
-
-    
+    this.contactRef = React.createRef(); 
   }
 
   componentDidMount() {
@@ -61,7 +57,7 @@ class Index extends Component {
         intersectionAmount,
         sectionPositions,
         getSectionPositions
-      } = this.state; 
+      } = this.state;
       
       items.forEach(item => {
         intersectionAmount[item.target.id] = item.intersectionRatio;
@@ -74,7 +70,7 @@ class Index extends Component {
       const activeLink = Object.keys(intersectionAmount).reduce((acc, cur) => {
         return intersectionAmount[acc] > intersectionAmount[cur] ? acc : cur
       });
-
+      
       // Save new state
       this.setState({
         intersectionAmount,
@@ -83,7 +79,6 @@ class Index extends Component {
         getSectionPositions: false
       });
     }, {
-      root: this.rootRef.current,
       threshold: new Array(11).fill(0).map((v, i) => i * 0.1)
     });
 
@@ -130,7 +125,7 @@ class Index extends Component {
           navOpen={navOpen}
           toggleNav={this.toggleNav}
         />
-        <div ref={this.rootRef} className="main">
+        <div className="main">
           <Landing reference={this.homeRef} />
           <About reference={this.aboutRef} />
           <Portfolio reference={this.portfolioRef} />

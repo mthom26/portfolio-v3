@@ -36,12 +36,7 @@ class BlogPost extends Component {
     this.handleScroll = this.handleScroll.bind(this);
 
     // Create refs for each section
-    this.rootRef = React.createRef();
     this.blogRef = React.createRef();
-    // this.homeRef = React.createRef();
-    // this.aboutRef = React.createRef();
-    // this.portfolioRef = React.createRef();
-    // this.contactRef = React.createRef();
   }
 
   componentDidMount() {
@@ -79,10 +74,9 @@ class BlogPost extends Component {
         getSectionPositions: false
       });
     }, {
-      root: this.rootRef.current,
       threshold: new Array(11).fill(0).map((v, i) => i * 0.1)
     });
-    
+
     window.addEventListener('scroll', this.handleScroll, { passive: true });
     this.observer.observe(this.blogRef.current);
     // this.observer.observe(this.homeRef.current);
@@ -132,7 +126,7 @@ class BlogPost extends Component {
           navOpen={navOpen}
           toggleNav={this.toggleNav}
         />
-        <div ref={this.rootRef} className="main">
+        <div className="main">
           <BlogPostComponent reference={this.blogRef} data={data} />
         </div>
       </div>
