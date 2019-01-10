@@ -1,6 +1,6 @@
 ---
 title: "React Animated Card Modal Part 1"
-date: "2019-01-09"
+date: "2019-01-10"
 slug: "react-animated-card-modal-part-1"
 ---
 
@@ -237,7 +237,7 @@ export class Modal extends Component {
 
 export default Modal;
 ```
-This component uses React Portals to render something outside the current DOM hierarchy. When mounted this component looks for an element with an id of 'modal' and creates a new 'div' as a child of that element. It then renders any children of this Modal component within that new 'div'. You can learn more about portals from the [React Documentation](https://reactjs.org/docs/portals.html).
+This component uses React Portals to render something outside the current DOM hierarchy. When mounted this component looks for an element with an id of 'modal' and creates a new `div` as a child of that element. It then renders any children of this Modal component within that new `div`. You can learn more about portals from the [React Portals Documentation](https://reactjs.org/docs/portals.html).
 
 The modal needs something to attach to so add the highlighted code to the body tag of *public/index.html*:
 ```html
@@ -332,7 +332,7 @@ class CardModal extends Component {
 
 export default CardModal;
 ```
-Clicking on one of the Cards now will spawn a CardModal below the cards so the next thing to do is spawn the CardModal with the correct width, height and screen position. First a reference to the DOM node of the Card component is needed. You can learn more about references from the [React Documentation](https://reactjs.org/docs/refs-and-the-dom.html). Then we can use `getBoundingClientRect()` ([MDN Docs](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect)) on this ref to obtain the dimensions.
+Clicking on one of the Cards now will spawn a CardModal below the cards so the next thing to do is spawn the CardModal with the correct width, height and screen position. First a reference to the DOM node of the Card component is needed. You can learn more about references from the [React Refs Documentation](https://reactjs.org/docs/refs-and-the-dom.html). Then we can use `getBoundingClientRect()` ([MDN getBoundingClientRect Docs](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect)) on this ref to obtain the dimensions.
 
 In the Card component add the highlighted code:
 ```jsx
@@ -416,7 +416,7 @@ The `measure()` function is called when the component mounts, calls `getBounding
 
 ## Animating the CardModal
 
-In the CardModal we will use the [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API) `animate()` function to animate the Card. Add the highlighted code below:
+In the CardModal we will use the [MDN Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API) `animate()` function to animate the Card. Add the highlighted code below:
 ```jsx
 // src/components/CardModal.js
 import React, { Component } from 'react';
@@ -557,7 +557,7 @@ class CardModal extends Component {
 
 export default CardModal;
 ```
-The `unmount()` function creates a new animation that is the reverse of the mounting animation and adds an `onfinish()` handler ([MDN Docs](https://developer.mozilla.org/en-US/docs/Web/API/Animation/onfinish)) to it. When the animation ends this handler calls the unmountAction prop which will toggle the maximised state in the parent Card Component to false and unmount the CardModal. (The unmountAction needs to be passed down from the Card component as shown below):
+The `unmount()` function creates a new animation that is the reverse of the mounting animation and adds an `onfinish()` handler ([MDN onfinish Docs](https://developer.mozilla.org/en-US/docs/Web/API/Animation/onfinish)) to it. When the animation ends this handler calls the unmountAction prop which will toggle the maximised state in the parent Card Component to false and unmount the CardModal. (The unmountAction needs to be passed down from the Card component as shown below):
 ```jsx
 // src/components/Card.js
 import React, { Component, Fragment } from 'react';
@@ -618,10 +618,10 @@ export default Card;
 ``` 
 Also note the addition of the conditionally rendered 'cardHide' class on the card. Now when the Card is clicked and maximised is set to 'true' the original Card will disappear as the CardModal begins it's animation. This gives the illusion that it is the same card when clicked.
 
-Now the CardModal mounts and unmounts properly but there are a few problems.
+Now the CardModal mounts and unmounts properly but there are a couple of problems.
 
-If the user clicks on the CardModal while the animation is playing the CardModal snaps to the full screen size and then plays the unmount animation. Ideally the animation should just shrink from the current size as the user clicks it.
+* If the user clicks on the CardModal while the animation is playing the CardModal snaps to the full screen size and then plays the unmount animation. Ideally the animation should just shrink from the current size when the user clicks it.
 
-Secondly when the browser window is resized the Card components will then have incorrect dimensions stored in their state. If the user resizes their browser and clicks on one of the cards it will animate from and to the wrong place.
+* Secondly when the browser window is resized the Card components will then have incorrect dimensions stored in their state. If the user resizes their browser and clicks on one of the cards it will animate from and to the wrong place.
 
 In Part 2 we will fix both of these problems.
