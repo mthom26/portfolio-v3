@@ -5,6 +5,7 @@ import Project from './Project';
 
 import autoRepairImage from '../../images/autobodyrepairdark.jpg';
 import restaurantImage from '../../images/projectrestaurantdark.jpg';
+import sorchaImage from '../../images/sorchawebsite.png';
 
 class Portfolio extends React.Component {
   constructor(props) {
@@ -14,6 +15,8 @@ class Portfolio extends React.Component {
     this.fadeRightRefOne = React.createRef();
     this.fadeRefTwo = React.createRef();
     this.fadeRightRefTwo = React.createRef();
+    this.fadeRefThree = React.createRef();
+    this.fadeRightRefThree = React.createRef();
   }
 
   componentDidMount() {
@@ -34,6 +37,8 @@ class Portfolio extends React.Component {
     this.observer.observe(this.fadeRightRefOne.current);
     this.observer.observe(this.fadeRefTwo.current);
     this.observer.observe(this.fadeRightRefTwo.current);
+    this.observer.observe(this.fadeRefThree.current);
+    this.observer.observe(this.fadeRightRefThree.current);
   }
 
   render() {
@@ -41,6 +46,18 @@ class Portfolio extends React.Component {
 
     return (
       <div ref={reference} id="portfolio" className="portfolio">
+        <Project
+          imageRef={this.fadeRefThree}
+          contentRef={this.fadeRightRefThree}
+          image={sorchaImage}
+          linkAddress="https://www.sorchathompson.com/"
+          gitHubAddress="https://github.com/mthom26/sorcha-website"
+          customColor="#d3ad45"
+          projectName="Sorcha Thompson"
+        >
+          <h3>Sorcha Thompson</h3>
+          <p>A multi-lingual website (English and German) using Contentful CMS. The owner can add blogposts and gig entries.</p>
+        </Project>
         <Project
           imageRef={this.fadeRefOne}
           contentRef={this.fadeRightRefOne}
