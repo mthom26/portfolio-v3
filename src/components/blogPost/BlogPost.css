@@ -22,11 +22,16 @@
 }
 
 .blogPostTitle {
-  margin: 2.5rem 0;
+  margin: 2.5rem 0 4rem 0;
+  text-align: center;
 }
 
 .blogPostTitle span {
   opacity: 0.6;
+}
+
+.blogPostTitle hr {
+  margin: 1.5rem auto;
 }
 
 .blogPostFooter {
@@ -126,9 +131,5 @@
   .blogPostPrevIcon, .blogPostNextIcon {
     transform: translateX(0);
     opacity: 1;
-  }
-
-  .blogPostTitle {
-    text-align: center;
   }
 }

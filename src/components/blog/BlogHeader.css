@@ -15,7 +15,10 @@
 }
 
 .blogHeaderh1 {
+  border-bottom: 2px solid var(--orange);
+  display: inline-block;
   margin-bottom: 1.8rem;
+  padding-bottom: 0.5rem;
   line-height: 1.2;
 }
 

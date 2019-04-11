@@ -33,6 +33,7 @@ class BlogPostComponent extends Component {
           <div className="blogPostTitle">
             <h1>{title}</h1>
             <span>{date}</span>
+            <hr className="blogPostRuler" />
           </div>
           <div className="blogPostContent" dangerouslySetInnerHTML={{ __html: html }} />
           <hr className="blogPostRuler" />
