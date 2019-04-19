@@ -6,13 +6,24 @@ slug: "gatsby-page-transitions"
 
 I have always liked the idea of animating page transitions. In a typical single page React application it isn't too difficult to implement them, you might just animate each page on mount/unmount as you would any other component. It's a bit harder to do the same using Gatsby because navigating to a new page will trigger a reload. Luckily there are libraries that can take care of this. We will be using [Gatsby Plugin Transition Link](https://transitionlink.tylerbarnes.ca/) (and [AnimeJS](https://animejs.com/) for the actual animations).
 
-We will build a three page website with a static background image. The content for each page will animate in and out when the user changes pages. Here are links to the finished [project]() and [repository]().
+We will build a three page website with a static background image. The content for each page will animate in and out when the user changes pages. Here are links to the finished [project](https://gatsby-page-transitions.netlify.com/) and [repository](https://github.com/mthom26/gatsby-page-transitions).
 
 ## Project Setup
 
 Create a new Gatsby project using the [hello world starter](https://github.com/gatsbyjs/gatsby-starter-hello-world) and install the dependancies we will need:
 
-`npm install gatsby-plugin-transition-link animejs`
+`npm install gatsby-plugin-transition-link animejs` 
+
+Add the transition link to the `gatsby-config.js` file at the root of the project:
+
+```js
+// /gatsby-config.js
+module.exports = {
+  plugins: [
+    'gatsby-plugin-transition-link'
+  ]
+};
+```
 
 Next add a file for each page in *src/pages/*, and a Layout component. The id each page passes to the Layout component is important and will determine the order of the pages:
 
@@ -85,13 +96,13 @@ import '../index.css';
 const Layout = ({ children, id }) => {
   return (
     <Fragment>
-      <TransitionPortal level="bottom">
-        <div className="layoutBackground"></div>
-      </TransitionPortal>
       <Nav id={id} />
       <div id={id} className="layout">
         {children}
       </div>
+      <TransitionPortal level="bottom">
+        <div className="layoutBackground"></div>
+      </TransitionPortal>
     </Fragment>
   )
 };
@@ -391,19 +402,19 @@ Next we will add an animated background gradient to make the transitions more in
 
 ```jsx
 // src/components/Layout.js
-{ /* highlight-range{6} */ }
+{ /* highlight-range{10} */ }
 const Layout = ({ children, id }) => {
   // console.log(`Render: ${id}`);
   return (
     <Fragment>
-      <TransitionPortal level="bottom">
-        <div id={`layoutBgGradient-${id}`} className="layoutBgGradient"></div>
-        <div className="layoutBackground"></div>
-      </TransitionPortal>
       <Nav id={id} />
       <div id={id} className="layout">
         {children}
       </div>
+      <TransitionPortal level="bottom">
+        <div id={`layoutBgGradient-${id}`} className="layoutBgGradient"></div>
+        <div className="layoutBackground"></div>
+      </TransitionPortal>
     </Fragment>
   )
 };
@@ -448,7 +459,7 @@ In our Nav component we update each TransitionLink with the code below (don't fo
 >
   About
 </TransitionLink>
-// Add these changes for the other two links also...
+// Add these changes for the other two TransitionLink components also...
 ```
 
 Then update our `getAnim()` function:
@@ -501,4 +512,6 @@ const getAnim = (item, bg, animData, animType) => {
 };
 ```
 
-Now each page corresponds to a fraction of this background gradient and moving from a page to any other page results in the background sliding in the same direction as the page content to the proper position for the next page.
+Now each page corresponds to a fraction of this background gradient and moving from a page to any other page results in the background sliding in the same direction as the page content to the proper position for the next page. 
+
+You could keep adding animations or use different animations for different pages if you want. [Gatsby Plugin Transition Link](https://transitionlink.tylerbarnes.ca/) gives you access to the entering and exiting pages but leaves the animating completely up to you. You can see many different animations on the [example site](https://gatsby-plugin-transition-link.netlify.com/).
